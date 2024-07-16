@@ -12,9 +12,7 @@ while bottles and cups:
         cups.appendleft(abs(water))
 
 if not cups:
-    print('Bottles: ', end='')
-    print(*bottles)
+    print("Bottles:", *bottles)
 else:
-    print('Cups: ', end='')
-    print(*cups)
+    print("Cups:", *cups)
 print(f"Wasted litters of water: {wasted_water}")
