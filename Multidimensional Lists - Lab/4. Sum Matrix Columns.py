@@ -1,0 +1,2 @@
+rows, columns = input().split(', ')
+
