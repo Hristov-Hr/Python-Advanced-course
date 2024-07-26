@@ -1,5 +1,5 @@
 rows, columns = [int(x) for x in input().split()]
-matrix = [[x for x in input().split()] for _ in range(rows)]
+matrix = [input().split() for _ in range(rows)]
 equal_cells = 0
 
 for i in range(rows - 1):
