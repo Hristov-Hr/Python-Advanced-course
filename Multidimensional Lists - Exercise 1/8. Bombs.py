@@ -11,6 +11,7 @@ for n in coordinates:
             if 0 <= r < len(matrix) and 0 <= c < len(matrix) and matrix[r][c] > 0:
                 matrix[r][c] -= value
 
-print(f"Alive cells: {len([n for row in range(len(matrix)) for n in matrix[row] if n > 0])}")
-print(f"Sum: {sum([n for row in range(len(matrix)) for n in matrix[row] if n > 0])}")
+cells = [n for row in range(len(matrix)) for n in matrix[row] if n > 0]
+print(f"Alive cells: {len(cells)}")
+print(f"Sum: {sum(cells)}")
 [print(*sub) for sub in matrix]
