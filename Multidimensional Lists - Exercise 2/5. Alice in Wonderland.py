@@ -11,7 +11,7 @@ directions = {
 }
 
 for r in range(size):
-    wonderland_territory.append([int(x) if x.isdigit() else x for x in input().split()])
+    wonderland_territory.append(input().split())
     if 'A' in wonderland_territory[r]:
         alice_position = [r, wonderland_territory[r].index('A')]
         wonderland_territory[alice_position[0]][alice_position[1]] = "*"
@@ -25,8 +25,7 @@ while collected_bags < 10:
     if wonderland_territory[alice_position[0]][alice_position[1]] == 'R':
         wonderland_territory[alice_position[0]][alice_position[1]] = '*'
         break
-    elif wonderland_territory[alice_position[0]][alice_position[1]] != '.' \
-            and wonderland_territory[alice_position[0]][alice_position[1]] != '*':
+    elif wonderland_territory[alice_position[0]][alice_position[1]].isdigit():
         collected_bags += int(wonderland_territory[alice_position[0]][alice_position[1]])
     wonderland_territory[alice_position[0]][alice_position[1]] = '*'
 
