@@ -7,6 +7,13 @@ def func_executor(*args):
 
     return result
 
+# SOLUTION - 2:
+
+# def func_executor(*func_data):
+#
+#     return '\n'.join(f"{func.__name__} - {func(*args)}" for func, args in func_data)
+
+
 
 # def make_upper(*strings):
 #     result = tuple(s.upper() for s in strings)
