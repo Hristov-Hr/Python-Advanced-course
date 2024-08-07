@@ -17,7 +17,7 @@ def math_operations(*args, **kwargs):
             if numbers:
                 try:
                     kwargs[k] = operators[k](kwargs[k], numbers.popleft())
-                except:
+                except ZeroDivisionError:
                     continue
 
             else:
