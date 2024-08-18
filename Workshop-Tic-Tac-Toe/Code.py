@@ -1,4 +1,5 @@
 from collections import deque
+
 from printy import printy
 from pyfiglet import Figlet
 
