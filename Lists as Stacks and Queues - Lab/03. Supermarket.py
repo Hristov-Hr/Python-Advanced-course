@@ -1,7 +1,10 @@
 from collections import deque
+
 my_deque = deque()
+
 while True:
     name = input()
+
     if name == 'End':
         break
     elif name == 'Paid':
