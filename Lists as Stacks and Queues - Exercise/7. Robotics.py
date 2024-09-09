@@ -1,7 +1,7 @@
 # my_first_solution:
-
-#from collections import deque
-
+#
+# from collections import deque
+#
 # def time_convertor(time, seconds):
 #     h, m, s = time.split(':')
 #     sec = (int(s) + seconds) % 60
