@@ -9,8 +9,8 @@ for i in range(1, int(input()) + 1):
         odd_numbers.add(name_value)
 
 if sum(odd_numbers) > sum(even_numbers):
-    print(*odd_numbers, sep=', ')
+    print(*odd_numbers.difference(even_numbers), sep=', ')
 elif sum(odd_numbers) < sum(even_numbers):
-    print(*even_numbers ^ odd_numbers, sep=', ')
+    print(*odd_numbers.symmetric_difference(even_numbers), sep=', ')
 elif sum(odd_numbers) == sum(even_numbers):
-    print(*odd_numbers | even_numbers, sep=', ')
+    print(*odd_numbers.union(even_numbers), sep=', ')
