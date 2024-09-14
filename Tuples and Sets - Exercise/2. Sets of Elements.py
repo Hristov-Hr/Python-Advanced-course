@@ -1,10 +1,6 @@
-first_set = set()
-second_set = set()
+n, m = [int(x) for x in input().split()]
 
-first_length, second_length = input().split()
-for _ in range(int(first_length)):
-    first_set.add(int(input()))
-for _ in range(int(second_length)):
-    second_set.add(int(input()))
-for num in first_set & second_set:
-    print(num)
+first_set = set(int(input()) for _ in range(n))
+second_set = set(int(input()) for _ in range(m))
+
+print(*first_set.intersection(second_set), sep='\n')
