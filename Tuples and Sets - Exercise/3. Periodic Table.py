@@ -1,7 +1,4 @@
-elements = set()
+el = set()
+[el.update(set(input().split())) for _ in range(int(input()))]
 
-for _ in range(int(input())):
-    for element in input().split():
-        elements.add(element)
-for n in elements:
-    print(n)
+print(*el, sep='\n')
