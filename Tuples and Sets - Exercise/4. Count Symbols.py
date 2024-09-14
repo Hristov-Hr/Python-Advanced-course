@@ -1,8 +1,8 @@
-text = input()
-chars_counter = {}
+chars = input()
 
-for char in text:
-    chars_counter[char] = text.count(char)
+result = {}
 
-for n in sorted(chars_counter.items()):
-    print(f"{n[0]}: {n[1]} time/s")
+for x in chars:
+    result[x] = chars.count(x)
+
+[print(f"{k}: {v} time/s") for k, v in sorted(result.items())]
