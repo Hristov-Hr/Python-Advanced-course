@@ -28,6 +28,7 @@ def send_money(code, total, years, amount, pin_pass):
     total -= amount
     print(f"Successfully sent {amount:.2f} money to a friend"
           f"There is {total:.2f} money left in the bank account")
+    return total
 
 
 def receive_money(amount, total):
@@ -35,6 +36,7 @@ def receive_money(amount, total):
         raise MoneyIsNegativeError("The amount of money cannot be a negative number")
     total += amount / 2
     print(f"{amount / 2:.2f} money went straight into the bank account")
+    return total
 
 
 pin_code, balance, age = [int(n) for n in input().split(', ')]
@@ -49,8 +51,9 @@ while True:
 
     elif command[0] == 'Send Money':
         money, pin = command[1:]
-        send_money(pin_code, balance, age, int(money), int(pin))
+        balance = send_money(pin_code, balance, age, int(money), int(pin))
 
     elif command[0] == 'Receive Money':
         money = int(command[1])
-        receive_money(money, balance)
+        balance = receive_money(money, balance)
+
