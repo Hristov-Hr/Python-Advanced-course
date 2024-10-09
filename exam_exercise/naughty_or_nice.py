@@ -1,47 +1,29 @@
 def naughty_or_nice_list(kids, *args, **kwargs):
 
-    nice_kids = []
-    naughty_kids = []
-    not_found = []
+    sorted_kids = {'Nice': [], 'Naughty': [], 'Not found': []}
 
     for arg in args:
         num, type_kid = arg.split('-')
         found_kids = [kid for kid in kids if kid[0] == int(num)]
         if len(found_kids) == 1:
-            if type_kid == 'Nice':
-                nice_kids.append(found_kids[0][1])
-            elif type_kid == 'Naughty':
-                naughty_kids.append(found_kids[0][1])
+            sorted_kids[type_kid].append(found_kids[0][1])
             kids.remove(found_kids[0])
-        else:
-            continue
 
     for k, v in kwargs.items():
         found_kid = [n for n in kids if n[1] == k]
         if found_kid:
-            if v == 'Nice':
-                nice_kids.append(found_kid[0][1])
-            elif v == 'Naughty':
-                naughty_kids.append(found_kid[0][1])
+            sorted_kids[v].append(found_kid[0][1])
             kids.remove(found_kid[0])
 
     for j in kids:
-        not_found.append(j[1])
+        sorted_kids["Not found"].append(j[1])
 
     result = []
-    if nice_kids:
-        result.append(f"Nice: {', '.join(n for n in nice_kids)}")
-    if naughty_kids:
-        result.append(f"Naughty: {', '.join(n for n in naughty_kids)}")
-    if not_found:
-        result.append(f"Not found: {', '.join(n for n in not_found)}")
+    for key, value in sorted_kids.items():
+        if value:
+            result.append(f"{key}: {', '.join(value)}")
 
     return '\n'.join(result)
-
-
-
-
-
 
 
 print(naughty_or_nice_list(
